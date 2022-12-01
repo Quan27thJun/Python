@@ -1,0 +1,7 @@
+import math
+t = int(input())
+while t>0:
+    t-=1
+    s = input(); n = len(s)
+    res = s[n-2] + s[n-1]
+    print('YES') if res =='86' else print('NO')
