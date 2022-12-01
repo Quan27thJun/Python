@@ -1,0 +1,8 @@
+s1 = input()
+s2 = input()
+pos = int(input()) - 1
+
+x1 = s1[:pos]
+x2 = s1[pos:]
+
+print(x1 + s2 + x2)
