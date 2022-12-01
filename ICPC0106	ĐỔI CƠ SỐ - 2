@@ -1,0 +1,24 @@
+import math
+
+
+t = int(input())
+while t > 0:
+    b = int(input())
+    n = input()
+    nl = list(n)
+    nl.reverse()
+    n=''.join(nl)
+    m = 0
+    for i in range(0,len(n)):
+        if n[i]=='1': m+= int(math.pow(2,i))
+    res =''
+    while(m > 0):
+        a = m % b
+        if b > 10:
+            if a >=10: res= chr(a+55)+res
+            else:res= chr(a+48)+res
+        else:
+            res = chr(a+48)+res
+        m//=b
+    print(res)
+    t-=1
