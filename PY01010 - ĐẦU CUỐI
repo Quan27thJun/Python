@@ -1,0 +1,10 @@
+t = int(input())
+while t>0:
+    t=t-1;
+    s = input()
+    n = len(s)
+    s1 = s[0]+s[1]
+    s2= s[n-2]+s[n-1]
+    print('YES') if s1 == s2 else print('NO')
+
+
