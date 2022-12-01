@@ -1,0 +1,6 @@
+s = input()
+a = s.count('4'); b =s.count('7')
+c = a+b
+print('YES') if c==4 or c==7 else print('NO')
+
+
