@@ -1,0 +1,17 @@
+import math
+if __name__ == '__main__' :
+    P = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ_.'
+    str = list(P)
+    while True:
+        s = input()
+        arr = s.split()
+        k = int(arr[0])
+        if k ==0 : break
+        a = list(arr[1])
+        res = ''
+        for x in a:
+            pos = P.index(x)
+            res += str[(pos+k)%28]
+        print(res[::-1])
+
+
