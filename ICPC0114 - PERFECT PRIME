@@ -1,0 +1,30 @@
+import math
+import re
+prime = [True for i in range(100000)]
+prime[0] = prime[1] = False
+def eratosthenes():
+    i = 2
+    while i*i < 100000:
+        if prime[i]==True:
+            for j in range (2*i,100000,i): prime[j] = False
+        i+=1
+def isPrime (n) :
+    for i in range(2,int(math.sqrt(n))+1):
+        if n%i==0 : return False
+    return n>1
+def isPerpectPrime(n):
+    if isPrime(n)==False: return  False
+    if isPrime(int(str(n)[::-1])) == False: return  False
+    sum = 0
+    n = str(n)
+    for i in n:
+        if isPrime(int(i)) == False: return False
+        sum += int(i)
+    return isPrime(sum)
+if __name__ == '__main__':
+    t = int(input())
+    eratosthenes()
+    while t>0:
+        t-=1
+        n= int(input())
+        print('Yes') if isPerpectPrime(n) else print('No')
