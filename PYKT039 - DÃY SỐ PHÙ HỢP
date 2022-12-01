@@ -1,0 +1,14 @@
+def isSuitable(arr1,arr2):
+    for i in range(len(arr1)):
+        if arr1[i] > arr2[i] : return False
+    return True
+if __name__ =='__main__':
+    t = int(input())
+    while t>0:
+        t-=1
+        n= int(input())
+        arr1 = [int(x) for x in input().split()]
+        arr1.sort()
+        arr2= [int(x) for x in input().split()]
+        arr2.sort()
+        print('YES') if isSuitable(arr1,arr2) else print('NO')
