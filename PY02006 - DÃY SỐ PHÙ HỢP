@@ -1,0 +1,16 @@
+import math
+def isSuitable (a,b):
+    n = len(a)
+    for i in range(n):
+        if a[i] > b[i] : return False
+    return True
+if __name__ == '__main__':
+    t = int(input())
+    while t > 0 :
+        t-=1
+        n = int(input())
+        a = [int (x) for x in input().split()]
+        b = [int (x) for x in input().split()]
+        a.sort()
+        b.sort()
+        print('YES') if isSuitable(a,b) else print('NO')
