@@ -1,0 +1,21 @@
+import math
+import re
+prime = [True for i in range(100000)]
+prime[0] = prime[1] = False
+def eratosthenes():
+    i = 2
+    while i*i < 100000:
+        if prime[i]==True:
+            for j in range (2*i,100000,i): prime[j] = False
+        i+=1
+if __name__ == '__main__':
+    t = int(input())
+    eratosthenes()
+    while t>0:
+        t-=1
+        n= int(input())
+        cnt = 0
+        for i in range(n-6) :
+            if prime[i]  and prime[i+6] :
+                if prime[i+4] or prime[i+2] : cnt += 1
+        print(cnt)
