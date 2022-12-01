@@ -1,0 +1,24 @@
+import math
+
+prime = [True for i in range(100000)]
+prime[0] = prime[1] = False
+ds=[]
+def eratosthenes():
+    i = 2
+    while i*i < 100000:
+        if prime[i]==True:
+            for j in range (2*i,100000,i): prime[j] = False
+        i+=1
+    for i in range(2,100000):
+        if prime[i] : ds.append(i)
+if __name__ == '__main__':
+    eratosthenes()
+    n ,x = [int(x) for x in input().split()]
+    print(x,end = ' ')
+    for i in range(n):
+        x = x+ds[i]
+        print(x,end = ' ')
+
+
+
+
