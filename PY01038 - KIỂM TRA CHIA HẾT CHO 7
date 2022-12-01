@@ -1,0 +1,22 @@
+import math
+if __name__ == '__main__' :
+    t = int(input())
+    while t > 0:
+        t-=1
+        sum = int(input())
+        ok = 0
+        for i in range(1000):
+            if sum%7==0:
+                print(sum)
+                ok= 1
+                break
+            x1 = sum
+            x2 = int(str(sum)[::-1])
+            sum = x1 + x2
+            n = sum
+        if ok ==0 : print(-1)
+
+
+
+
+
