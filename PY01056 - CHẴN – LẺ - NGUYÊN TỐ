@@ -1,0 +1,19 @@
+import math
+def isPrime(n):
+    for i in range (2,int(math.sqrt(n))+1):
+        if n%i==0 : return False
+    return n>1
+def isXenKe(s):
+    sum = 0
+    for i in range(len(s)):
+        sum += int(s[i])
+        if i%2==0 and int(s[i])%2!=0 : return False
+        if i%2!=0 and int(s[i])%2==0: return False
+    return isPrime(sum)
+if __name__ == '__main__':
+    t = int (input())
+    while t > 0 :
+        t-=1
+        s = input()
+        print('YES') if isXenKe(s) else print('NO')
+
