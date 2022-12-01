@@ -1,0 +1,19 @@
+import math
+import re
+if __name__ == '__main__':
+    t = int (input())
+    while t>0:
+        t-=1
+        x1,x2 = [int(x) for x in input().split()]
+        s1 = input().strip()
+        if (s1.count(' ')):
+            s1, s2 = s1.split()
+        else:
+            s2 = input()
+        x0 = x1
+        x1 = min(x0,x2)
+        x2 = max (x1,x2)
+        s1=s1.replace(str(x2),str(x1))
+        s2 = s2.replace(str(x2),str(x1))
+        print(int(s1)+int(s2),end=' ')
+        print(int(s1.replace(str(x1),str(x2)))+int(s2.replace(str(x1),str(x2))))
