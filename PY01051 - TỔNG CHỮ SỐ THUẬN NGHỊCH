@@ -1,0 +1,16 @@
+import math
+def isReversible(s):
+    if len(s) < 2 : return False
+    return s == s[::-1]
+if __name__ == '__main__':
+    t = int (input())
+    while t >0:
+        t-=1
+        s = input()
+        sum = 0
+        for x in s :
+            sum += int(x)
+        s = str(sum)
+        print('YES') if isReversible(s) else print('NO')
+
+
