@@ -1,0 +1,17 @@
+import math
+import re
+if __name__ == '__main__':
+    t = int (input())
+    while t>0:
+        t-=1
+        n,k = [int(x) for x in input().split()]
+        s = input().split()
+        a = [int(x) for x in s]
+        for i in range(k,n) :
+            print(a[i],end = ' ')
+        for i in range(k) :
+            print(a[i],end= ' ')
+        print()
+
+
+
