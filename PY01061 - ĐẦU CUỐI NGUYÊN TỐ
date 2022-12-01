@@ -1,0 +1,22 @@
+import math
+check = [True for i in range(1002)]
+def eratosthenes():
+    check[0] = False
+    check[1] = False
+    i = 2
+    while i*i <= 1000:
+        if check[i] == True:
+            for j in range(2*i,1000,i): check[j] = False
+        i+=1
+if __name__ == '__main__' :
+    t = int(input())
+    eratosthenes()
+    while t > 0:
+        t-=1
+        s = input()
+        x1 = int(s[:3]) ; x2 = int(s[len(s)-3:])
+        print('YES') if check[x1] & check[x2] else print('NO')
+
+
+
+
