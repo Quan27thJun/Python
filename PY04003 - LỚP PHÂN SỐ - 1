@@ -1,0 +1,15 @@
+import math
+
+
+class Fraction:
+    def __init__(self,numerator,denominator):
+        self.numerator = numerator
+        self.denominator = denominator
+    def compact(self):
+        ucln = math.gcd(self.numerator,self.denominator)
+        x = self.numerator/ucln
+        y= self.denominator/ucln
+        print(str(int(x))+"/"+str(int(y)))
+x,y = map(int,input().split())
+ps = Fraction(x,y)
+ps.compact()
