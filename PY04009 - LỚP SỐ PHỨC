@@ -1,0 +1,31 @@
+class ComplexNumber:
+    def __init__(self,a,b):
+        self.real = a
+        self.virtual = b
+    def __add__(self, other):
+        x = self.real + other.real
+        y = self.virtual+other.virtual
+        return ComplexNumber(x,y)
+    def square(self):
+        x = self.real*self.real + self.virtual*self.virtual*-1
+        y= 2*self.real*self.virtual
+        return ComplexNumber(x,y)
+    def caculateC(self,other):
+        sum = self.__add__(other)
+        x = sum.real*self.real + sum.virtual*self.virtual*-1
+        y = sum.real*self.virtual+sum.virtual*self.real
+        return ComplexNumber(x,y)
+if __name__ =='__main__':
+    t = int(input())
+    while t>0:
+        t-=1
+        a,b,c,d = map(int,input().split())
+        c1 = ComplexNumber(a,b)
+        c2 = ComplexNumber(c,d)
+        C = c1.caculateC(c2)
+        D = c1.__add__(c2).square()
+        print(C.real,end='')
+        if (C.virtual>=0 ): print(' + {}i, {}'.format(C.virtual,D.real),end ='')
+        else : print(' - {}i, {}'.format(int(C.virtual/-1),D.real),end='')
+        if (D.virtual>=0) : print(' + {}i'.format(D.virtual))
+        else: print(' + {}i'.format(int(D.virtual/-1)))
