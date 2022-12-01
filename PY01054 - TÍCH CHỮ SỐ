@@ -1,0 +1,10 @@
+import math
+if __name__ == '__main__':
+    t = int (input())
+    while t > 0 :
+        t-=1
+        s = input()
+        mul = 1 ;
+        for x in s:
+            if int(x)!=0 : mul*= int(x)
+        print(mul)
