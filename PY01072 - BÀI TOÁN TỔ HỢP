@@ -1,0 +1,10 @@
+import itertools
+n,k = [int(x) for x in input().split()]
+arr = [int(x) for x in input().split()]
+arr = set(arr)
+arr = list(arr)
+arr.sort()
+arr = map(str,arr)
+comb = itertools.combinations(arr,k)
+for x in comb:
+    print(' '.join(x))
