@@ -1,0 +1,18 @@
+import math
+t = int(input())
+while t >0:
+    t-=1
+    s = input()
+    ok = 0 ; n= len(s)
+    sum = int(s[n-1])
+    for i in range(n-1):
+        sum += int(s[i])
+        if(abs(int(s[i])-int(s[i+1]))!=2) :
+            ok = 1;
+            break;
+    if ok ==0 and sum%10==0:
+        print('YES')
+    else :
+        print('NO')
+
+
