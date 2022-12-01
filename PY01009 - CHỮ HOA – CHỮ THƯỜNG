@@ -1,0 +1,7 @@
+s = input()
+count = 0
+for x in s :
+    if x >= 'a' and x <='z' : count +=1
+print(s.lower()) if count >= len(s) - count else print(s.upper())
+
+
