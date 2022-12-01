@@ -1,0 +1,15 @@
+import math
+if __name__ == '__main__' :
+    t = int(input())
+    while t >0 :
+        t-=1
+        s = input()
+        s = list(s)
+        i = 0 ; j = 1
+        while i < len(s) -1 :
+            for k in range(int(s[j])):
+                print(s[i],end="")
+            i+=2; j+=2
+        print()
+
+
