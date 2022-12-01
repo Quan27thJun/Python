@@ -1,0 +1,12 @@
+import math
+import re
+if __name__ == '__main__':
+    t = int (input())
+    while t>0:
+        t-=1
+        s = input().strip()
+        if (s.count(' ')): s , s1 = s.split()
+        else : s1 = input()
+        s = int(s)
+        s1 = int(s1)
+        print(math.gcd(s,s1))
