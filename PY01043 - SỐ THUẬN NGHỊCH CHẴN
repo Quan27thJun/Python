@@ -1,0 +1,20 @@
+import math
+def check(s):
+    s= str(s)
+    if s != s[::-1] or len(s)%2!=0 : return False
+    for x in s:
+        if ord(x)%2!=0: return False
+    return True
+if __name__ == '__main__':
+    t = int(input())
+    while t > 0:
+        t-=1
+        s = input()
+        for x in range(10,int(s),2):
+            if check(x) : print(x,end=' ')
+        print()
+
+
+
+
+
