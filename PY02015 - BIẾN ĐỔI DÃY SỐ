@@ -1,0 +1,21 @@
+def isBreak(arr):
+    if arr[0] == 0 and arr[1]==0 and arr[2]==0  and arr[3]==0: return True
+    return False
+def isBalance(arr):
+    if arr[0] == arr[1] and arr[1]==arr[2] and arr[2]==arr[3] : return True
+    return False
+if __name__ == '__main__':
+    while True:
+        arr = [int(x) for x in input().split()]
+        if isBreak(arr) :
+            break
+        else:
+            cnt = 0
+            while isBalance(arr) == False:
+                arr1 = list(arr)
+                arr[3] = int(abs(arr1[3]-arr1[0]))
+                arr[0] = int(abs(arr1[0]-arr1[1]))
+                arr[1] = int(abs(arr1[1]-arr1[2]))
+                arr[2] = int(abs(arr1[2]-arr1[3]))
+                cnt += 1
+            print(cnt)
